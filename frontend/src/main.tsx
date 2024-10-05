@@ -5,7 +5,7 @@ import "./index.css";
 
 import { ThemeProvider } from "@mui/material/styles";
 
-import { themePalette } from "./palette/theme-palette";
+import { themePalette } from "./app/palette/theme-palette";
 import App from "./App";
 
 const router = createBrowserRouter([
