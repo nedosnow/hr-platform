@@ -1,6 +1,7 @@
 export const ROUTES = {
-  index: "/",
-  signIn: "/sign-in",
-  signUp: "/sign-up",
-  addCandidate: "/add-candidate",
+  index: "/platform",
+  signIn: "/platform/sign-in",
+  signUp: "/platform/sign-up",
+  addCandidate: "/platform/candidate/add",
+  candidatesList: "/platform/candidates",
 };
