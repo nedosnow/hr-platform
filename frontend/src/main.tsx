@@ -1,21 +1,32 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
 
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from "@mui/material/styles";
 
-import {themePalette} from "./palette/theme-palette";
-import App from './App';
+import { themePalette } from "./palette/theme-palette";
+import App from "./App";
 
-createRoot(document.getElementById('root')!).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/registration",
+    element: <div>registration</div>,
+  },
+  {
+    path: "/authentification",
+    element: <div>authentification</div>,
+  },
+]);
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-      <ThemeProvider theme={themePalette}>
-
-<App/>
-      </ThemeProvider>
-      
-  </StrictMode>
-
-)
-
-
+    <ThemeProvider theme={themePalette}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </StrictMode>,
+);

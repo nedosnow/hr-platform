@@ -1,16 +1,14 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Button from './button/button';
-
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Button } from "@mui/material";
 
 export default function MediaControlCard() {
-
   return (
-    <Card sx={{ display: 'flex' }}>
+    <Card sx={{ display: "flex" }}>
       <CardMedia
         component="img"
         sx={{ width: 151 }}
@@ -18,39 +16,39 @@ export default function MediaControlCard() {
         alt="Live from space album cover"
       />
       <Box sx={{ flexGrow: 1 }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
+        <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography component="div" variant="h5">
             Иванов Иван Иванович
           </Typography>
-          <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography
-            variant="subtitle1"
-            component="div"
-            sx={{ color: 'text.secondary' }}
-          >
-           Жабаскрипт разработчик
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            component="div"
-            sx={{ color: 'text.secondary' }}
-          >
-            Жабаскрипт разработчик
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            component="div"
-            sx={{ color: 'text.secondary' }}
-          >
-            Жабаскрипт разработчик
-          </Typography>
-        </CardContent>
+          <CardContent sx={{ flex: "1 0 auto" }}>
+            <Typography
+              variant="subtitle1"
+              component="div"
+              sx={{ color: "text.secondary" }}
+            >
+              Жабаскрипт разработчик
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              component="div"
+              sx={{ color: "text.secondary" }}
+            >
+              Жабаскрипт разработчик
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              component="div"
+              sx={{ color: "text.secondary" }}
+            >
+              Жабаскрипт разработчик
+            </Typography>
+          </CardContent>
         </CardContent>
       </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-          <Button variant="contained" >уХеллоу</Button>
-          <Button variant="contained" >уХеллоу</Button>
-        </Box>
+      <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
+        <Button variant="contained">уХеллоу</Button>
+        <Button variant="contained">уХеллоу</Button>
+      </Box>
     </Card>
   );
 }
