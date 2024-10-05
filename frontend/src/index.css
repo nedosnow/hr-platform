@@ -3,19 +3,18 @@
   font-weight: 400;
   font-style: normal;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #232121;
+  color-scheme: light;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-.mainHeaderIcon{
- height: 32px;
-  animation: spin 2s;
- padding-right: 10px;
-};
+
+  .mainHeaderIcon {
+    height: 32px;
+    animation: spin 2s;
+    padding-right: 10px;
+  }
   .bodyContainer {
     margin-top: 2em;
   }
@@ -23,7 +22,7 @@
 
 @keyframes spin {
   from {
-    transform: rotate(0deg)
+    transform: rotate(0deg);
   }
   25% {
     scale: 150%;
@@ -41,8 +40,6 @@
     transform: rotate(360deg);
   }
 }
-
-
 
 a {
   font-weight: 500;
