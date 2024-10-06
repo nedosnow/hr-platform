@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Document Editor</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+</head>
+<body>
+<h2>Редактор кода</h2>
+<label
+        for="document">
+</label>
+<textarea
+        id="document" cols="130" rows="30">
+</textarea>
+
+<script type="text/javascript">
+    let stompClient = null;
+
+    function connect() {
+        const socket = new SockJS('/ws');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, function (frame) {
+            console.log('Connected: ' + frame);
+
+            stompClient.subscribe('/topic/updates', function (update) {
+                showUpdate(JSON.parse(update.body).content);
+            });
+        });
+    }
+
+    function sendUpdate() {
+        const content = document.getElementById("document").value;
+        stompClient.send("/app/edit", {}, JSON.stringify({'content': content}));
+    }
+
+    function showUpdate(message) {
+        document.getElementById("document").value = message;
+    }
+
+    document.getElementById("document").addEventListener('input', function () {
+        sendUpdate();
+    });
+
+    connect();
+</script>
+</body>
+</html>

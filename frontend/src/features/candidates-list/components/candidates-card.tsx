@@ -1,15 +1,10 @@
+import { CardMedia, Box, CardContent, Typography, Chip } from "@mui/material";
 import {
-  CardMedia,
-  Box,
-  CardContent,
-  Typography,
-  Button,
-  Chip,
-} from "@mui/material";
-import {
-  ButtonContaier,
   CardContainer,
   CardContentContainer,
+  CardImage,
+  StatusContainer,
+  StyledHeaderBox,
 } from "./candidates-card.style";
 
 type User = {
@@ -39,71 +34,71 @@ const CandidatesCard = ({ user }: { user: User }) => {
 
   return (
     <CardContainer>
-      <CardMedia
-        component="img"
-        sx={{
-          margin: "20px",
-          width: "160px",
-          borderRadius: "24px",
-          height: "200px",
-        }}
-        image={avatar}
-        alt="Live from space album cover"
-      />
-
       <CardContentContainer>
-        <Box>
-          <CardContent sx={{ flex: "1 0 auto" }}>
+        <CardImage
+          component="img"
+          image={avatar}
+          alt="Live from space album cover"
+        />
+
+        <StyledHeaderBox>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "16px",
+            }}
+          >
             <Typography component="div" variant="subtitle1">
               {`${surname} ${name} ${middleName}`}
             </Typography>
-            <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
-              <Typography
-                component="div"
-                variant="subtitle1"
-                sx={{ color: "text.secondary" }}
-              >
-                {role}
-              </Typography>
-              <Chip variant="outlined" color="primary" label={status} />
-            </Box>
-            <Box>
-              <Typography
-                variant="subtitle2"
-                component="div"
-                sx={{ color: "text.secondary" }}
-              >
-                Дата рождения: {dateOfBirth}
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                component="div"
-                sx={{ color: "text.secondary" }}
-              >
-                e-mail: {email}
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                component="div"
-                sx={{ color: "text.secondary" }}
-              >
-                Телефон: {phoneNumber}
-              </Typography>
-            </Box>
-          </CardContent>
-        </Box>
-        <ButtonContaier>
-          <Button
-            size="large"
-            sx={{ borderRadius: "12px" }}
-            variant="contained"
+          </Box>
+          <StatusContainer>
+            <Typography
+              component="div"
+              variant="subtitle1"
+              sx={{ color: "text.secondary" }}
+            >
+              {role}
+            </Typography>
+            <Chip
+              size="small"
+              variant="outlined"
+              color="primary"
+              label={status}
+            />
+          </StatusContainer>
+        </StyledHeaderBox>
+        <CardContent
+          sx={{
+            paddingLeft: "0",
+            paddingBottom: "0!important",
+            flex: "1 0 auto",
+            padding: "0",
+            marginLeft: "100px",
+          }}
+        >
+          <Typography
+            variant="subtitle2"
+            component="div"
+            sx={{ color: "text.secondary" }}
           >
-            уХеллоу
-          </Button>
-          <Button size="large" sx={{ borderRadius: "12px" }} variant="outlined">
-            уХеллоу
-          </Button>
-        </ButtonContaier>
+            Дата рождения: {dateOfBirth}
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            component="div"
+            sx={{ color: "text.secondary" }}
+          >
+            e-mail: {email}
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            component="div"
+            sx={{ color: "text.secondary" }}
+          >
+            Телефон: {phoneNumber}
+          </Typography>
+        </CardContent>
       </CardContentContainer>
     </CardContainer>
   );

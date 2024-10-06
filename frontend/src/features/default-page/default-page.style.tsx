@@ -4,7 +4,7 @@ import Card from "@mui/material/Card/Card";
 import { Box } from "@mui/material";
 
 export const StyledContainer = styled(Container)`
-  background-image: url(/src/assets/1.jpg);
+  background-image: url(/src/assets/7.46.45.jpg);
   position: fixed;
   display: flex;
   justify-content: center;
@@ -15,7 +15,6 @@ export const StyledContainer = styled(Container)`
   right: 0;
   overflow: auto;
   max-width: none !important;
-  backdrop-filter: blur(9px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,12 +22,11 @@ export const StyledContainer = styled(Container)`
 
 export const StyledCard = styled(Card)`
   background-color: #24162300;
-  backdrop-filter: blur(10px);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 500px;
+  position: absolute;
+  top: 140px;
+  left: 250px;
+  box-shadow: none !important;
 `;
 
 export const StyledBox = styled(Box)`
