@@ -38,7 +38,7 @@ const Header: FC = () => {
   };
 
   return (
-    <AppBar position="sticky">
+    <AppBar sx={{ backgroundColor: "#0e0c0edb" }} position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <HeaderLogo />

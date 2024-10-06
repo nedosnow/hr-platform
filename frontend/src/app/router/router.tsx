@@ -4,6 +4,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ROUTES } from "./router.constants";
 
 const AddCandidatePage = lazy(() => import("@/pages/add-candidate-page"));
+const CandidatesListPage = lazy(() => import("@/pages/candidates-list-page"));
+const DefaultPagePage = lazy(
+  () => import("@/features/default-page/default-page"),
+);
 
 const router = createBrowserRouter([
   {
@@ -11,16 +15,24 @@ const router = createBrowserRouter([
     element: <MainPage />,
     children: [
       {
+        path: ROUTES.index,
+        element: <DefaultPagePage />,
+      },
+      {
         path: ROUTES.signIn,
-        element: <div>registration</div>,
+        element: <div>authentification</div>,
       },
       {
         path: ROUTES.signUp,
-        element: <div>authentification</div>,
+        element: <div>registration</div>,
       },
       {
         path: ROUTES.addCandidate,
         element: <AddCandidatePage />,
+      },
+      {
+        path: ROUTES.candidatesList,
+        element: <CandidatesListPage />,
       },
     ],
   },
