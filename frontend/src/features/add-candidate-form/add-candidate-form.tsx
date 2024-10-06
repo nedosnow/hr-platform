@@ -1,12 +1,10 @@
 import TextField from "@mui/material/TextField";
 import { FC } from "react";
-import { FormWrapper } from "./add-candidate-form.style";
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import AvatarField from "./components/avatar-field";
+import Form from "@/shared/components/form/form";
 
 const positions = [
   {
@@ -25,17 +23,10 @@ const positions = [
 
 const AddCandidateForm: FC = () => {
   return (
-    <FormWrapper>
+    <Form>
       <Typography variant="h4">Добавить соискателя</Typography>
 
-      <Avatar
-        // src="/static/images/avatar/1.jpg"
-        sx={{ width: 72, height: 72 }}
-      />
-      <Button variant="contained" startIcon={<CloudUploadIcon />}>
-        Загрузить фото
-        <input type="file" accept="image/png, image/jpeg" hidden />
-      </Button>
+      <AvatarField />
 
       <TextField label="Имя" name="name" required fullWidth />
       <TextField label="Отчество" name="middlename" fullWidth />
@@ -56,7 +47,7 @@ const AddCandidateForm: FC = () => {
         ))}
       </TextField>
       <Button variant="contained">Добавить</Button>
-    </FormWrapper>
+    </Form>
   );
 };
 
