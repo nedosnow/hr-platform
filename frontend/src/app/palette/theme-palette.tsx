@@ -10,4 +10,5 @@ export const themePalette: Theme = createTheme({
     },
     info: { main: "#ffff" },
   },
+  spacing: 4,
 });

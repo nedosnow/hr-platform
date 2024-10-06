@@ -1,5 +1,5 @@
 import MainPage from "@/pages/main-page";
-import { FC, lazy } from "react";
+import { FC, lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ROUTES } from "./router.constants";
 
@@ -8,6 +8,8 @@ const CandidatesListPage = lazy(() => import("@/pages/candidates-list-page"));
 const DefaultPagePage = lazy(
   () => import("@/features/default-page/default-page"),
 );
+const SignInPage = lazy(() => import("@/pages/sign-in-page"));
+const SignUpPage = lazy(() => import("@/pages/sign-up-page"));
 
 const router = createBrowserRouter([
   {
@@ -20,11 +22,11 @@ const router = createBrowserRouter([
       },
       {
         path: ROUTES.signIn,
-        element: <div>authentification</div>,
+        element: <SignInPage />,
       },
       {
         path: ROUTES.signUp,
-        element: <div>registration</div>,
+        element: <SignUpPage />,
       },
       {
         path: ROUTES.addCandidate,
@@ -39,7 +41,11 @@ const router = createBrowserRouter([
 ]);
 
 const Router: FC = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 };
 
 export default Router;
