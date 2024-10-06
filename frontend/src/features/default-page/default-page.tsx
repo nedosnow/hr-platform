@@ -12,10 +12,10 @@ import { ROUTES } from "@/app/router/router.constants";
 const DefaultPage = () => {
   const navigate = useNavigate();
 
-  const redirectToAuth = () => {
+  const handleGoToSignIn = () => {
     navigate(ROUTES.signIn);
   };
-  const redirectToRegistration = () => {
+  const handleGoToSignUp = () => {
     navigate(ROUTES.signUp);
   };
   return (
@@ -28,7 +28,7 @@ const DefaultPage = () => {
           <ButtonContainer>
             <Button
               color="info"
-              onClick={redirectToAuth}
+              onClick={handleGoToSignIn}
               size="large"
               variant="contained"
             >
@@ -36,7 +36,7 @@ const DefaultPage = () => {
             </Button>
             <Button
               color="info"
-              onClick={redirectToRegistration}
+              onClick={handleGoToSignUp}
               size="large"
               variant="outlined"
             >
