@@ -9,19 +9,7 @@ const HeaderLogo: FC = () => (
       <img src={icon} height={30} width={30} />
     </HeaderLogoIcon>
 
-    <Typography
-      variant="h6"
-      noWrap
-      sx={{
-        mr: 2,
-        display: { xs: "none", md: "flex" },
-        fontFamily: "monospace",
-        fontWeight: 700,
-        letterSpacing: ".3rem",
-        color: "inherit",
-        textDecoration: "none",
-      }}
-    >
+    <Typography variant="h6" noWrap mr={32}>
       SpaceTeam | HR platform
     </Typography>
   </>

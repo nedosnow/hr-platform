@@ -34,10 +34,10 @@ const Header: FC = () => {
               gap: 3,
             }}
           >
-            <Button variant="contained" onClick={handleSignIn}>
+            <Button color="info" variant="outlined" onClick={handleSignIn}>
               Войти
             </Button>
-            <Button variant="contained" onClick={handleSignUp}>
+            <Button color="info" variant="outlined" onClick={handleSignUp}>
               Зарегестрироваться
             </Button>
           </Box>

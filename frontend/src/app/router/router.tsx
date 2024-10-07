@@ -5,6 +5,9 @@ import { ROUTES } from "./router.constants";
 
 const AddCandidatePage = lazy(() => import("@/pages/add-candidate-page"));
 const CandidatesListPage = lazy(() => import("@/pages/candidates-list-page"));
+const CandidatesProfilePage = lazy(
+  () => import("@/pages/candidate-profile-page"),
+);
 const DefaultPagePage = lazy(
   () => import("@/features/default-page/default-page"),
 );
@@ -35,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: ROUTES.candidatesList,
         element: <CandidatesListPage />,
+      },
+      {
+        path: ROUTES.candidateProfile,
+        element: <CandidatesProfilePage />,
       },
     ],
   },
