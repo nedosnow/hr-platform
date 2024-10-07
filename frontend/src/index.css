@@ -1,9 +1,14 @@
 :root {
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  /* font-family: "M PLUS Rounded 1c", sans-serif; */
+  /* font-weight: 400; */
+  /* font-style: normal; */
 
   color-scheme: light;
+
+  background-color: #f0e4df;
+  /* #ededed; */
+  /* --nf-bg-2: #f8f8f8;
+  --nf-bg-3: #fff; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

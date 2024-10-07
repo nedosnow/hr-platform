@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import AvatarField from "./components/avatar-field";
-import Form from "@/shared/components/form/form";
+import Box from "@mui/material/Box";
 
 const positions = [
   {
@@ -23,11 +23,18 @@ const positions = [
 
 const AddCandidateForm: FC = () => {
   return (
-    <Form>
+    <Box
+      p={6}
+      width="420px"
+      display="flex"
+      flexDirection="column"
+      gap={4}
+      mx="auto"
+      mb={16}
+      boxShadow={4}
+    >
       <Typography variant="h4">Добавить соискателя</Typography>
-
       <AvatarField />
-
       <TextField label="Имя" name="name" required fullWidth />
       <TextField label="Отчество" name="middlename" fullWidth />
       <TextField label="Фамилия" name="surname" required fullWidth />
@@ -47,7 +54,7 @@ const AddCandidateForm: FC = () => {
         ))}
       </TextField>
       <Button variant="contained">Добавить</Button>
-    </Form>
+    </Box>
   );
 };
 

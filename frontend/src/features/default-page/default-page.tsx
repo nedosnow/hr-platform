@@ -12,10 +12,10 @@ import { ROUTES } from "@/app/router/router.constants";
 const DefaultPage = () => {
   const navigate = useNavigate();
 
-  const redirectToAuth = () => {
+  const handleGoToSignIn = () => {
     navigate(ROUTES.signIn);
   };
-  const redirectToRegistration = () => {
+  const handleGoToSignUp = () => {
     navigate(ROUTES.signUp);
   };
   return (
@@ -25,6 +25,7 @@ const DefaultPage = () => {
           Space team
         </Typography>
         <StyledBox></StyledBox>
+
       </StyledCard>
     </StyledContainer>
   );

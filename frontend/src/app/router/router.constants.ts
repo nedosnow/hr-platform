@@ -4,4 +4,5 @@ export const ROUTES = {
   signUp: "/platform/sign-up",
   addCandidate: "/platform/candidates/add",
   candidatesList: "/platform/candidates",
+  candidateProfile: "/platform/candidates/:id",
 };

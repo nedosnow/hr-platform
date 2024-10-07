@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 const MainPage: FC = () => (
   <>
     <Header />
-    <Container>
+    <Container sx={{ pt: 8, pb: 8 }}>
       <Outlet />
     </Container>
   </>
