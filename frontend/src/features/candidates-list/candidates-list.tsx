@@ -2,14 +2,18 @@ import Box from "@mui/material/Box/Box";
 
 import CandidatesCard from "./components/candidates-card";
 import Grid from "@mui/material/Grid/Grid";
+import TextField from "@mui/material/TextField/TextField";
+import { SearchContainer } from "./candidates-list.style";
+import SearchIcon from "@mui/icons-material/Search";
+import { IconButton, Input } from "@mui/material";
 
 const avatar = "/src/assets/img_avatar.png";
 const avater2 = "/src/assets/img_avatar2.png";
 const candidates = [
   {
-    name: "Имя - 1",
-    surname: "Фамилия - 1",
-    middleName: "Отчество - 1",
+    name: "Иван",
+    surname: "Иванович",
+    middleName: "Иванов",
     avatar: avatar,
     status: "На рассмотрении",
     dateOfBirth: "1.11.1991",
@@ -18,9 +22,9 @@ const candidates = [
     role: "Developer",
   },
   {
-    name: "Имя - 2",
-    surname: "Фамилия - 2",
-    middleName: "Отчество - 2",
+    name: "Петр",
+    surname: "Петров",
+    middleName: "Петрович",
     avatar: avater2,
     status: "Принят",
     dateOfBirth: "2.22.1991",
@@ -29,9 +33,9 @@ const candidates = [
     role: "Developer",
   },
   {
-    name: "Имя - 3",
-    surname: "Фамилия - 3",
-    middleName: "Отчество - 3",
+    name: "Иван",
+    surname: "Петрович",
+    middleName: "Иванов",
     avatar: avatar,
     status: "Зарегистрирован",
     dateOfBirth: "3.33.1991",
@@ -40,9 +44,9 @@ const candidates = [
     role: "Tester",
   },
   {
-    name: "Имя - 4",
-    surname: "Фамилия - 4",
-    middleName: "Отчество - 4",
+    name: "Петр",
+    surname: "Иванович",
+    middleName: "Петров",
     avatar: avatar,
     status: "На рассмотрении",
     dateOfBirth: "1.11.444",
@@ -51,9 +55,9 @@ const candidates = [
     role: "Analythic",
   },
   {
-    name: "Имя - 5",
-    surname: "Фамилия - 5",
-    middleName: "Отчество - 5",
+    name: "Олег",
+    surname: "Иванович",
+    middleName: "Петров",
     avatar: avater2,
     status: "На рассмотрении",
     dateOfBirth: "5.11.1991",
@@ -65,15 +69,26 @@ const candidates = [
 
 const CandidatesList = () => {
   return (
-    <Box sx={{ width: "100%", margin: "24px 0" }}>
-      <Grid container spacing={3}>
-        {candidates.map((user) => (
-          <Grid item xs={6}>
-            <CandidatesCard user={user} />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <>
+      <SearchContainer>
+        <Input
+          inputProps={{ label: "Поиск" }}
+          fullWidth
+          id="outlined-basic"
+          endAdornment={<SearchIcon />}
+        />
+      </SearchContainer>
+
+      <Box sx={{ width: "100%", margin: "16px 0" }}>
+        <Grid container spacing={3}>
+          {candidates.map((user) => (
+            <Grid item xs={4}>
+              <CandidatesCard user={user} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </>
   );
 };
 

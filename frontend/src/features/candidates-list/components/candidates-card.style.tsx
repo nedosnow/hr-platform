@@ -10,12 +10,14 @@ export const CardContainer = styled(Card)`
   border-color: #0000001f;
   border-style: solid;
   border-radius: 16px;
+  padding-bottom: 12px;
 `;
 
 export const CardContentContainer = styled(CardContent)`
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const ButtonContaier = styled(Box)`
@@ -25,6 +27,29 @@ export const ButtonContaier = styled(Box)`
 `;
 
 export const CardImage = styled(CardMedia)`
-  height: 170px;
-  border-radius: 0 0 30px 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  margin: 20px;
+  width: 70px;
+  border-radius: 24px;
+  height: 70px;
+`;
+
+export const StyledHeaderBox = styled(Box)`
+  margin-left: 100px;
+`;
+
+export const StatusContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+`;
+
+export const ButtonContainer = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-rigth: 12px;
 `;

@@ -21,29 +21,11 @@ const DefaultPage = () => {
   return (
     <StyledContainer maxWidth="sm">
       <StyledCard>
-        <StyledBox>
-          <Typography color={"#ffff"} variant="h1" component="h2">
-            Space team
-          </Typography>
-          <ButtonContainer>
-            <Button
-              color="info"
-              onClick={handleGoToSignIn}
-              size="large"
-              variant="contained"
-            >
-              Войти
-            </Button>
-            <Button
-              color="info"
-              onClick={handleGoToSignUp}
-              size="large"
-              variant="outlined"
-            >
-              Зарегистрироваться
-            </Button>
-          </ButtonContainer>
-        </StyledBox>
+        <Typography color={"#241623"} variant="h1" component="h2">
+          Space team
+        </Typography>
+        <StyledBox></StyledBox>
+
       </StyledCard>
     </StyledContainer>
   );
